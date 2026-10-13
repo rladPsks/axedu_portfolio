@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026 AX-Edu 해커톤 팀 포트폴리오 — 교육 현장을 이해하고 AI로 구현하는 예비교원 팀" />
+  <title>AX-Edu 2026 | Team Portfolio</title>
+  <style>
+    :root{
+      --ink:#12233f; --muted:#65738a; --line:#dfe7f1; --paper:#f7f9fc;
+      --blue:#2457d6; --blue2:#5b8def; --navy:#0b1f3a; --white:#fff;
+      --shadow:0 18px 50px rgba(18,35,63,.08); --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Pretendard,"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--white);line-height:1.68}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(223,231,241,.8)}
+    .navin{height:68px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:850;letter-spacing:-.03em}.brand b{color:var(--blue)}
+    .navlinks{display:flex;gap:24px;font-size:14px;color:var(--muted);font-weight:650}
+    .hero{position:relative;overflow:hidden;padding:105px 0 72px;background:
+      radial-gradient(circle at 82% 18%,rgba(91,141,239,.22),transparent 28%),
+      linear-gradient(180deg,#f7faff 0%,#fff 78%)}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid #cad8f4;border-radius:999px;color:var(--blue);font-weight:750;font-size:13px;background:#fff}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--blue)}
+    h1{font-size:clamp(44px,6vw,76px);line-height:1.06;letter-spacing:-.055em;margin:24px 0 24px;max-width:920px}
+    .accent{color:var(--blue)}
+    .lead{font-size:19px;color:var(--muted);max-width:720px;margin:0 0 34px}
+    .chips{display:flex;flex-wrap:wrap;gap:9px}.chip{font-size:13px;font-weight:700;padding:8px 12px;border-radius:10px;background:#eef4ff;color:#315da9}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:58px}
+    .stat{padding:22px;border:1px solid var(--line);background:rgba(255,255,255,.82);border-radius:18px}
+    .stat strong{display:block;font-size:29px;line-height:1.1}.stat span{font-size:13px;color:var(--muted)}
+    section{padding:90px 0}
+    .section-kicker{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);font-weight:850}
+    h2{font-size:38px;letter-spacing:-.045em;line-height:1.18;margin:8px 0 12px}
+    .desc{color:var(--muted);max-width:720px;margin-bottom:38px}
+    .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .flowcard{padding:26px 22px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:0 8px 30px rgba(18,35,63,.04)}
+    .num{font-size:12px;color:var(--blue);font-weight:850}.flowcard h3{margin:11px 0 8px;font-size:19px;letter-spacing:-.03em}.flowcard p{font-size:14px;color:var(--muted);margin:0}
+    .soft{background:var(--paper)}
+    .teamgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .person{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;display:flex;flex-direction:column;min-height:440px;box-shadow:var(--shadow)}
+    .role{font-size:12px;font-weight:850;color:var(--blue);text-transform:uppercase;letter-spacing:.08em}
+    .person h3{font-size:27px;margin:5px 0 2px;letter-spacing:-.04em}
+    .major{font-size:13px;color:var(--muted);margin-bottom:18px}
+    .person p{font-size:14px;color:#526178;margin:0 0 18px}
+    .tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}.tag{font-size:11px;font-weight:750;background:#f0f4fa;padding:5px 8px;border-radius:7px}
+    .highlights{padding:0;margin:0 0 20px 17px;color:#42516a;font-size:13px}.highlights li{margin:6px 0}
+    .button{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border:1px solid #cfd9e8;border-radius:10px;font-size:13px;font-weight:750}
+    .button:hover{border-color:var(--blue);color:var(--blue)}
+    .capgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .cap{padding:23px;border:1px solid var(--line);border-radius:18px}.cap h3{font-size:17px;margin:0 0 12px}.cap p{font-size:13px;color:var(--muted);margin:0}
+    .pipeline{margin-top:28px;padding:24px;border-radius:18px;background:var(--navy);color:#fff;text-align:center;font-weight:800;letter-spacing:.02em}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .project{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:27px;background:#fff;min-height:300px}
+    .project-visual{margin:-27px -27px 24px;height:235px;background:#eef3f9;border-bottom:1px solid var(--line);overflow:hidden}
+    .project-visual img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+    .project .detail{font-size:13px;color:#53627a;margin-top:10px}
+    .project .owner{font-size:11px;font-weight:800;color:#738198;margin-top:14px;text-transform:uppercase;letter-spacing:.05em}
+    .project:before{content:"";position:absolute;right:-40px;top:-40px;width:130px;height:130px;border-radius:50%;background:#eef4ff}
+    .project .idx{font-size:12px;font-weight:850;color:var(--blue)}.project h3{font-size:23px;line-height:1.25;margin:10px 0 8px;letter-spacing:-.035em}.project p{font-size:14px;color:var(--muted);max-width:90%}
+    .project .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:18px}.meta span{font-size:11px;background:#f2f5f9;border-radius:6px;padding:5px 7px;font-weight:700}
+    .project a{display:inline-block;margin-top:17px;color:var(--blue);font-size:13px;font-weight:800}
+    .ai-panel{background:linear-gradient(135deg,#0b1f3a,#163a76);border-radius:28px;color:#fff;padding:42px}
+    .ai-panel h2{margin-top:4px}.ai-panel .desc{color:#c9d6eb}
+    .aigrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .aiitem{padding:20px;border:1px solid rgba(255,255,255,.17);border-radius:16px;background:rgba(255,255,255,.06)}
+    .aiitem h3{font-size:15px;margin:0 0 7px}.aiitem p{font-size:12px;color:#c9d6eb;margin:0}
+    .fieldgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.field{border-top:3px solid var(--blue);padding:22px 4px}.field h3{font-size:20px;margin:0 0 10px}.field ul{padding-left:18px;color:var(--muted);font-size:14px}
+    .closing{padding:90px 0;background:#f5f8fd;text-align:center}.closing h2{font-size:46px;max-width:800px;margin:8px auto 20px}.closing p{max-width:700px;margin:auto;color:var(--muted)}
+    .closing .slogan{margin-top:28px;color:var(--blue);font-weight:850;letter-spacing:.08em}
+    footer{padding:26px 0;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+    @media(max-width:850px){.navlinks{display:none}.stats,.flow,.capgrid,.aigrid{grid-template-columns:repeat(2,1fr)}.teamgrid{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.fieldgrid{grid-template-columns:1fr}.person{min-height:0}}
+    @media(max-width:520px){.wrap{width:min(100% - 28px,1120px)}.hero{padding-top:72px}h1{font-size:43px}.stats,.flow,.capgrid,.aigrid{grid-template-columns:1fr}section{padding:66px 0}.ai-panel{padding:28px 20px}.closing h2{font-size:36px}}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="wrap navin">
+    <div class="brand"><b>AX</b>-Edu 2026 · Team Portfolio</div>
+    <div class="navlinks">
+      <a href="#why">Why Us</a><a href="#team">Team</a><a href="#works">Works</a><a href="#ai">AI</a><a href="#field">Field</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span> 2026 AX-Edu Hackathon</div>
+    <h1>교육 현장을 이해하고,<br><span class="accent">AI로 직접 구현하는</span> 예비교원 팀</h1>
+    <p class="lead">유아교육 · 초등교육 · 수학교육의 현장 이해와 심리학 · 통계학 · 소프트웨어의 기술 역량을 연결해, 실제 교사와 학생이 사용할 수 있는 교육 솔루션을 만듭니다.</p>
+    <div class="chips"><span class="chip">Education</span><span class="chip">AI Agent</span><span class="chip">LLM</span><span class="chip">Data</span><span class="chip">EdTech</span><span class="chip">Development</span></div>
+  </div>
+</header>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-kicker">Why Us</div>
+    <h2>From classroom problems<br>to working solutions.</h2>
+    <p class="desc">현장을 경험한 예비교원이 문제를 발견하고, 교육적으로 정의하고, AI와 소프트웨어로 구현하며, 실제 사용 맥락에서 다시 검토합니다.</p>
+    <div class="flow">
+      <div class="flowcard"><span class="num">01 · UNDERSTAND</span><h3>교육 현장 이해</h3><p>유아·초등·중등 교육실습과 교육봉사, 학원 및 교육 활동을 통해 학생과 교사의 실제 맥락을 경험했습니다.</p></div>
+      <div class="flowcard"><span class="num">02 · DEFINE</span><h3>문제 정의</h3><p>교육학·심리학·데이터 관점을 결합해 현장의 불편을 구체적인 사용자 문제와 요구사항으로 전환합니다.</p></div>
+      <div class="flowcard"><span class="num">03 · BUILD</span><h3>AI 기반 구현</h3><p>LLM, AI Agent, ML/DL, React Native, Unity, Web 기술을 활용해 작동하는 프로토타입을 만듭니다.</p></div>
+      <div class="flowcard"><span class="num">04 · VALIDATE</span><h3>검증과 개선</h3><p>연구 실험, 사용자 테스트, 교육실습과 실제 수업 적용을 통해 결과물이 현장에서 작동하는지 확인합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="soft">
+  <div class="wrap">
+    <div class="section-kicker">Team</div>
+    <h2>서로 다른 강점이<br>하나의 실행력으로 연결됩니다.</h2>
+    <p class="desc">교육 기획·AI 모델링·서비스 개발을 한 팀 안에서 연결할 수 있는 구성입니다.</p>
+    <div class="teamgrid">
+      <article class="person">
+        <div class="role">AI · Agent Development</div><h3>김예나</h3><div class="major">수학교육 · 통계학 · 소프트웨어</div>
+        <p>교육 현장에 대한 이해와 AI 연구·개발 역량을 연결합니다. LLM과 머신러닝 연구부터 웹서비스와 멀티에이전트 시스템 구현까지 경험했습니다.</p>
+        <div class="tags"><span class="tag">LLM</span><span class="tag">AI Agent</span><span class="tag">ML/DL</span><span class="tag">PyTorch</span><span class="tag">Data</span></div>
+        <ul class="highlights"><li>ICTC 2026 논문 채택 · 공동 제1저자</li><li>한국어 유튜브 허위정보 판별 AI 서비스</li><li>Multi-Agent System 구현</li><li>한국무라타전자 · SW융합 공모전 수상</li></ul>
+        <a class="button" href="https://github.com/rladPsks" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </article>
+      <article class="person">
+        <div class="role">Education Planning · PM</div><h3>임세랑</h3><div class="major">유아교육 · 심리학</div>
+        <p>유아교육 현장과 학습자의 발달·심리에 대한 이해를 바탕으로 교육 문제를 발굴하고 AI 기반 서비스로 구체화합니다.</p>
+        <div class="tags"><span class="tag">PM</span><span class="tag">EdTech</span><span class="tag">UX</span><span class="tag">Generative AI</span><span class="tag">Claude Code</span></div>
+        <ul class="highlights"><li>영어학원 유치부 담임 2년</li><li>이대부속유치원 교생 · 국회제2어린이집 보육실습</li><li>GrowEng AI 영어 읽기 평가·학습 서비스</li><li>두리번수학 기획·제작 및 사용자 테스트</li></ul>
+        <span class="button" style="color:#8a96a8">Portfolio · 증빙자료 첨부</span>
+      </article>
+      <article class="person">
+        <div class="role">EdTech · Software Development</div><h3>강유진</h3><div class="major">초등교육 · 소프트웨어</div>
+        <p>초등교육 현장에서 발견한 문제를 데이터 분석과 웹·앱·게임 개발을 통해 실제 사용할 수 있는 교육 도구로 구현합니다.</p>
+        <div class="tags"><span class="tag">React Native</span><span class="tag">Web</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Python</span></div>
+        <ul class="highlights"><li>초등학교 6학년 교육실습</li><li>STUD.IO 프런트엔드 개발</li><li>Unity 게임 EwhaRun 개발·배포</li><li>AI 기반 영어·사회 융합 학습도구 제작</li></ul>
+        <a class="button" href="https://github.com/ubernnensch" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-kicker">Team Capability</div><h2>교육과 기술을 함께 다룹니다.</h2>
+    <div class="capgrid">
+      <div class="cap"><h3>Education</h3><p>유아교육 · 초등교육 · 수학교육<br>교육실습 · 수업설계 · 학습자 이해</p></div>
+      <div class="cap"><h3>AI & Data</h3><p>LLM · RAG · AI Agent · Multi-Agent<br>ML/DL · Data Analysis · Uncertainty</p></div>
+      <div class="cap"><h3>Development</h3><p>Python · PyTorch · React Native<br>Unity · C# · Web Development</p></div>
+      <div class="cap"><h3>AI-assisted Building</h3><p>Claude · Claude Code · ChatGPT · Genspark<br>빠른 프로토타이핑과 반복 개선</p></div>
+    </div>
+    <div class="pipeline">Problem → Education Design → AI → Prototype → Validation</div>
+  </div>
+</section>
+
+<section id="works" class="soft">
+  <div class="wrap">
+    <div class="section-kicker">Selected Works</div><h2>아이디어에서 끝나지 않고<br>실제로 만들었습니다.</h2>
+    <p class="desc">연구, AI 서비스, 교육용 웹 도구와 앱까지 세 팀원의 대표 결과물입니다.</p>
+    <div class="projects">
+      <article class="project">
+        <div class="project-visual"><img src="assets/confuse-paper.png" alt="ConFuse 논문 첫 페이지"></div>
+        <span class="idx">01 · RESEARCH</span><h3>ConFuse</h3>
+        <p>스마트폰·스마트워치 라이프로그를 활용해 수면 상태를 예측하는 연구로, 구조화된 수치 데이터에 강한 GBDT와 개인의 행동 맥락을 해석하는 LLM을 결합했습니다.</p>
+        <p class="detail">데이터 신뢰도 점수에 따라 샘플별 LLM 활용 비중을 조절하는 context-aware fusion을 설계하고, 개인별 baseline을 반영한 LLM 학습과 GBDT ensemble을 함께 검증했습니다. 고정 50:50 결합보다 낮은 log loss를 기록했으며 ICTC 2026에 채택되었습니다.</p>
+        <div class="owner">김예나 · 공동 제1저자</div>
+        <div class="meta"><span>LLM</span><span>GBDT</span><span>Reliability-Aware Fusion</span><span>Lifelog</span><span>ICTC 2026</span></div>
+      </article>
+      <article class="project"><span class="idx">02 · AI SERVICE</span><h3>한국어 유튜브 허위정보 판별 AI 서비스</h3>
+        <p>한국어 유튜브 영상 1,435건의 데이터셋을 구축하고, 영상의 텍스트 정보를 바탕으로 허위정보 여부와 예측 신뢰도를 함께 제시하는 AI 서비스를 개발했습니다.</p>
+        <p class="detail">LLM의 반복 추론 결과를 집계하고 Conformal Prediction으로 불확실성을 정량화해, 근거가 부족한 경우 무리하게 단정하지 않는 신뢰도 기반 판별 구조를 설계했습니다. 데이터 구축·모델링·실험부터 일반 사용자가 이용할 수 있는 웹서비스 구현까지 End-to-End로 수행했습니다.</p>
+        <div class="owner">김예나 · AI/개발</div><div class="meta"><span>LLM</span><span>Uncertainty</span><span>Conformal Prediction</span><span>Web Service</span></div><a href="https://github.com/rladPsks/youtube-fakenews" target="_blank">GitHub ↗</a></article>
+      <article class="project"><span class="idx">03 · EDTECH</span><h3>GrowEng</h3>
+        <p>영어학원 유치부·초등부 학습자를 위한 AI 영어 읽기 평가·학습 서비스입니다. 교사가 모든 학생의 읽기 수행을 개별적으로 확인하기 어렵다는 현장 문제에서 출발했습니다.</p>
+        <p class="detail">학습자의 읽기 수준을 확인하고 결과에 맞는 학습 경험으로 이어질 수 있도록 서비스 흐름과 화면을 설계했습니다. 화면 설계, 디자인 시스템과 캐릭터 제작에도 생성형 AI를 활용해 아이디어를 빠르게 시각화하고 구체화했습니다.</p>
+        <div class="owner">임세랑 · 기획/PM</div><div class="meta"><span>EdTech</span><span>AI</span><span>Product Planning</span><span>UX</span></div></article>
+      <article class="project"><span class="idx">04 · LEARNING APP</span><h3>두리번수학</h3>
+        <p>유아가 수학 개념을 탐색하고 경험할 수 있도록 기획한 학습 앱으로, 교육 현장에서 발견한 요구를 디지털 학습 경험으로 전환한 프로젝트입니다.</p>
+        <p class="detail">Genspark를 활용해 초기 버전을 기획부터 제작까지 구현했으며, 실제 사용자 테스트 결과를 바탕으로 기능과 사용 흐름을 개선했습니다. 교육적 아이디어를 AI 도구로 빠르게 프로토타이핑하고 검증한 경험입니다.</p>
+        <div class="owner">임세랑 · 기획/PM</div><div class="meta"><span>Early Childhood</span><span>Math Education</span><span>Genspark</span><span>User Test</span></div></article>
+      <article class="project"><span class="idx">05 · APP DEVELOPMENT</span><h3>STUD.IO</h3>
+        <p>학습자가 자신의 학습 정보를 기록하고 계획과 리포트를 이어서 확인할 수 있도록 설계된 학습 지원 서비스의 프런트엔드 개발에 참여했습니다.</p>
+        <p class="detail">React Native와 Expo를 기반으로 학습 정보 입력, 학습 계획, 리포트 등 주요 화면과 사용자 흐름을 구현했습니다. 화면 간 상태 유지와 서버 연동 과정에서 발생한 오류를 해결하며 실제 서비스의 사용성과 완성도를 높였습니다.</p>
+        <div class="owner">강유진 · EdTech/개발</div><div class="meta"><span>React Native</span><span>Expo</span><span>Frontend</span><span>Learning Support</span></div><a href="https://github.com/ubernnensch/frontend" target="_blank">GitHub ↗</a></article>
+      <article class="project"><span class="idx">06 · CLASSROOM TOOL</span><h3>Our One-Day Trip</h3>
+        <p>초등 영어의 ‘I am going to’ 표현과 사회과의 세계화 내용을 연결해, 학생이 직접 여행 계획을 세우며 학습 내용을 실제 맥락에 적용하도록 만든 웹 기반 수업 도구입니다.</p>
+        <p class="detail">Claude Artifacts를 활용해 지도 앱의 기능을 초등학생 수준에 맞게 단순화하고, 도시·장소·이동수단과 시간을 선택해 일정을 구성할 수 있도록 구현했습니다. GitHub Pages로 배포해 수업에서 사용할 수 있는 형태까지 완성했습니다.</p>
+        <div class="owner">강유진 · EdTech/개발</div><div class="meta"><span>Claude Artifacts</span><span>Web</span><span>Classroom</span><span>Curriculum Integration</span></div><a href="https://ubernnensch.github.io/For-class-education/" target="_blank">Live Demo ↗</a></article>
+    </div>
+  </div>
+</section>
+
+<section id="ai">
+  <div class="wrap">
+    <div class="ai-panel">
+      <div class="section-kicker" style="color:#8fb6ff">AI Capability</div><h2>We don't just use AI.<br>We build with AI.</h2>
+      <p class="desc">생성형 AI를 질의 도구로 사용하는 데서 그치지 않고 모델·에이전트·개발 파트너·교육도구로 활용합니다.</p>
+      <div class="aigrid">
+        <div class="aiitem"><h3>AI as a Model</h3><p>LLM API · RAG · 반복 추론 · 불확실성 평가</p></div>
+        <div class="aiitem"><h3>AI as an Agent</h3><p>Tool Use · Role-based Agent · Multi-Agent Collaboration</p></div>
+        <div class="aiitem"><h3>AI as a Dev Partner</h3><p>Claude Code · ChatGPT · Genspark 기반 프로토타이핑</p></div>
+        <div class="aiitem"><h3>AI for Education</h3><p>교육용 웹도구 · 학습 서비스 · 수업자료 · 교육 콘텐츠</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="field">
+  <div class="wrap">
+    <div class="section-kicker">Field Experience</div><h2>Technology grounded<br>in the classroom.</h2>
+    <p class="desc">유아부터 초등·중등까지, 서로 다른 교육 단계에서 학생을 직접 만나고 수업과 지원을 경험했습니다.</p>
+    <div class="fieldgrid">
+      <div class="field"><h3>유아교육</h3><ul><li>영어학원 유치부 담임 2년</li><li>이화여대 부속유치원 교생실습</li><li>국회제2어린이집 보육실습</li><li>교육봉사 60시간</li></ul></div>
+      <div class="field"><h3>초등교육</h3><ul><li>초등학교 6학년 교육실습</li><li>학원 보조교사</li><li>LG디스커버리랩 서울 대학생 크루</li><li>AI 교육도구 실제 수업 활용</li></ul></div>
+      <div class="field"><h3>중등 · 수학교육</h3><ul><li>이대부고 수학 부진아 교육봉사</li><li>이대부고 교생실습</li><li>수학교육 기반 수업 설계</li><li>통계·SW를 결합한 문제 해결</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <div class="section-kicker">Why AX-Edu?</div>
+    <h2>현장을 아는 사람이 문제를 정의하고,<br>기술을 아는 사람이 직접 구현합니다.</h2>
+    <p>저희는 앞으로 학교 현장에서 학생을 만날 예비교원입니다. 보여주기 위한 AI가 아니라, 실제 교사와 학생이 사용할 수 있고 교육 격차를 줄이는 데 도움이 되는 AI 에이전트를 만들겠습니다.</p>
+    <div class="slogan">EDUCATION × AI × ACTION</div>
+  </div>
+</section>
+
+<footer><div class="wrap">2026 AX-Edu Hackathon · Team Portfolio · Ewha Womans University</div></footer>
+</body>
+</html>
