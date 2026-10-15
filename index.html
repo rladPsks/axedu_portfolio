@@ -40,7 +40,7 @@
     .flowcard{padding:26px 22px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:0 8px 30px rgba(18,35,63,.04)}
     .num{font-size:12px;color:var(--blue);font-weight:850}.flowcard h3{margin:11px 0 8px;font-size:19px;letter-spacing:-.03em}.flowcard p{font-size:14px;color:var(--muted);margin:0}
     .soft{background:var(--paper)}
-    .teamgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .teamgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
     .person{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;display:flex;flex-direction:column;min-height:440px;box-shadow:var(--shadow)}
     .role{font-size:12px;font-weight:850;color:var(--blue);text-transform:uppercase;letter-spacing:.08em}
     .person h3{font-size:27px;margin:5px 0 2px;letter-spacing:-.04em}
@@ -57,9 +57,11 @@
     .project{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:27px;background:#fff;min-height:300px}
     .project-visual{margin:-27px -27px 24px;height:260px;background:#f8fafc;border-bottom:1px solid var(--line);overflow:hidden}
     .project-visual img{width:100%;height:100%;object-fit:contain;object-position:center;display:block}
+    .project-visual.paper-visual{background:#fff}
+    .project-visual.paper-visual img{object-fit:cover;object-position:center 10%;transform:scale(1.03)}
     .project .detail{font-size:13px;color:#53627a;margin-top:10px}
     .project .owner{font-size:11px;font-weight:800;color:#738198;margin-top:14px;text-transform:uppercase;letter-spacing:.05em}
-    .project:before{content:"";position:absolute;right:-40px;top:-40px;width:130px;height:130px;border-radius:50%;background:#eef4ff}
+    .project:before{display:none}
     .project .idx{font-size:12px;font-weight:850;color:var(--blue)}.project h3{font-size:23px;line-height:1.25;margin:10px 0 8px;letter-spacing:-.035em}.project p{font-size:14px;color:var(--muted);max-width:90%}
     .project .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:18px}.meta span{font-size:11px;background:#f2f5f9;border-radius:6px;padding:5px 7px;font-weight:700}
     .project a{display:inline-block;margin-top:17px;color:var(--blue);font-size:13px;font-weight:800}
@@ -90,7 +92,7 @@
   <div class="wrap">
     <div class="eyebrow"><span class="dot"></span> 2026 AX-Edu Hackathon</div>
     <h1>교육 현장을 이해하고,<br><span class="accent">AI로 직접 구현하는</span> 예비교원 팀</h1>
-    <p class="lead">유아교육 · 초등교육 · 수학교육의 현장 이해와 심리학 · 통계학 · 소프트웨어의 기술 역량을 연결해, 실제 교사와 학생이 사용할 수 있는 교육 솔루션을 만듭니다.</p>
+    <p class="lead">유아교육 · 초등교육 · 수학교육을 기반으로 교육 기획, AI·데이터, 소프트웨어 개발 역량을 연결해 실제 교사와 학생이 사용할 수 있는 교육 솔루션을 만듭니다.</p>
     <div class="chips"><span class="chip">Education</span><span class="chip">AI Agent</span><span class="chip">LLM</span><span class="chip">Data</span><span class="chip">EdTech</span><span class="chip">Development</span></div>
   </div>
 </header>
@@ -113,7 +115,7 @@
   <div class="wrap">
     <div class="section-kicker">Team</div>
     <h2>서로 다른 강점이<br>하나의 실행력으로 연결됩니다.</h2>
-    <p class="desc">교육 기획·AI 모델링·서비스 개발을 한 팀 안에서 연결할 수 있는 구성입니다.</p>
+    <p class="desc">교육 기획·AI 모델링·서비스 개발·학습경험 설계를 한 팀 안에서 연결할 수 있는 구성입니다.</p>
     <div class="teamgrid">
       <article class="person">
         <div class="role">AI · Agent Development</div><h3>김예나</h3><div class="major">수학교육 · 통계학 · 소프트웨어</div>
@@ -136,6 +138,13 @@
         <ul class="highlights"><li>초등학교 6학년 교육실습</li><li>STUD.IO 프런트엔드 개발</li><li>Unity 게임 EwhaRun 개발·배포</li><li>AI 기반 영어·사회 융합 학습도구 제작</li></ul>
         <a class="button" href="https://github.com/ubernnensch" target="_blank" rel="noreferrer">GitHub ↗</a>
       </article>
+      <article class="person">
+        <div class="role">Education Service · AI Planning</div><h3>김수희</h3><div class="major">교육 서비스 기획 · AI 수업설계</div>
+        <p>교육 과정의 학습 경험과 상호작용을 데이터로 연결하고, 교사의 반복적인 수업 준비 업무를 AI로 지원하는 교육 서비스를 기획·개발합니다.</p>
+        <div class="tags"><span class="tag">EdTech</span><span class="tag">Service Planning</span><span class="tag">AI Lesson Plan</span><span class="tag">Learning Analytics</span><span class="tag">Web</span></div>
+        <ul class="highlights"><li>교육 경험·성장 관리 플랫폼 기획</li><li>사전·사후 설문 기반 개인별 성장 리포트 설계</li><li>강사·학습자 1:1 대화 및 활동 모니터링 기능 설계</li><li>AI 수업 지도안 약안 자동 생성 웹서비스 기획·개발</li></ul>
+        <span class="button" style="color:#8a96a8">Education Service · AI Planning</span>
+      </article>
     </div>
   </div>
 </section>
@@ -144,7 +153,7 @@
   <div class="wrap">
     <div class="section-kicker">Team Capability</div><h2>교육과 기술을 함께 다룹니다.</h2>
     <div class="capgrid">
-      <div class="cap"><h3>Education</h3><p>유아교육 · 초등교육 · 수학교육<br>교육실습 · 수업설계 · 학습자 이해</p></div>
+      <div class="cap"><h3>Education</h3><p>유아교육 · 초등교육 · 수학교육<br>교육실습 · 수업설계 · 학습자 이해 · 성장관리</p></div>
       <div class="cap"><h3>AI & Data</h3><p>LLM · RAG · AI Agent · Multi-Agent<br>ML/DL · Data Analysis · Uncertainty</p></div>
       <div class="cap"><h3>Development</h3><p>Python · PyTorch · React Native<br>Unity · C# · Web Development</p></div>
       <div class="cap"><h3>AI-assisted Building</h3><p>Claude · Claude Code · ChatGPT · Genspark<br>빠른 프로토타이핑과 반복 개선</p></div>
@@ -156,17 +165,17 @@
 <section id="works" class="soft">
   <div class="wrap">
     <div class="section-kicker">Selected Works</div><h2>아이디어에서 끝나지 않고<br>실제로 만들었습니다.</h2>
-    <p class="desc">연구, AI 서비스, 교육용 웹 도구와 앱까지 세 팀원의 대표 결과물입니다.</p>
+    <p class="desc">연구, AI 서비스, 교육 플랫폼과 웹·앱까지 네 팀원의 대표 결과물입니다.</p>
     <div class="projects">
       <article class="project">
-        <div class="project-visual"><img src="confuse-paper.png" alt="ConFuse 논문 첫 페이지"></div>
+        <div class="project-visual paper-visual"><img src="confuse-paper.png" alt="ConFuse 논문 첫 페이지"></div>
         <span class="idx">01 · RESEARCH</span><h3>ConFuse</h3>
         <p>스마트폰·스마트워치 라이프로그를 활용해 수면 상태를 예측하는 연구로, 구조화된 수치 데이터에 강한 GBDT와 개인의 행동 맥락을 해석하는 LLM을 결합했습니다.</p>
         <p class="detail">데이터 신뢰도 점수에 따라 샘플별 LLM 활용 비중을 조절하는 context-aware fusion을 설계하고, 개인별 baseline을 반영한 LLM 학습과 GBDT ensemble을 함께 검증했습니다. 고정 50:50 결합보다 낮은 log loss를 기록했으며 ICTC 2026에 채택되었습니다.</p>
         <div class="owner">김예나 · 공동 제1저자</div>
         <div class="meta"><span>LLM</span><span>GBDT</span><span>Reliability-Aware Fusion</span><span>Lifelog</span><span>ICTC 2026</span></div>
       </article>
-      <article class="project"><div class="project-visual"><img src="youtube.png" alt="한국어 유튜브 허위정보 판별 AI 서비스 화면"></div><span class="idx">02 · AI SERVICE</span><h3>한국어 유튜브 허위정보 판별 AI 서비스</h3>
+      <article class="project"><div class="project-visual"><img src="youtube-ai.png" alt="한국어 유튜브 허위정보 판별 AI 서비스 배너"></div><span class="idx">02 · AI SERVICE</span><h3>한국어 유튜브 허위정보 판별 AI 서비스</h3>
         <p>한국어 유튜브 영상 1,435건의 데이터셋을 구축하고, 영상의 텍스트 정보를 바탕으로 허위정보 여부와 예측 신뢰도를 함께 제시하는 AI 서비스를 개발했습니다.</p>
         <p class="detail">LLM의 반복 추론 결과를 집계하고 Conformal Prediction으로 불확실성을 정량화해, 근거가 부족한 경우 무리하게 단정하지 않는 신뢰도 기반 판별 구조를 설계했습니다. 데이터 구축·모델링·실험부터 일반 사용자가 이용할 수 있는 웹서비스 구현까지 End-to-End로 수행했습니다.</p>
         <div class="owner">김예나 · AI/개발</div><div class="meta"><span>LLM</span><span>Uncertainty</span><span>Conformal Prediction</span><span>Web Service</span></div><a href="https://github.com/rladPsks/youtube-fakenews" target="_blank">GitHub ↗</a></article>
@@ -186,6 +195,14 @@
         <p>초등 영어의 ‘I am going to’ 표현과 사회과의 세계화 내용을 연결해, 학생이 직접 여행 계획을 세우며 학습 내용을 실제 맥락에 적용하도록 만든 웹 기반 수업 도구입니다.</p>
         <p class="detail">Claude Artifacts를 활용해 지도 앱의 기능을 초등학생 수준에 맞게 단순화하고, 도시·장소·이동수단과 시간을 선택해 일정을 구성할 수 있도록 구현했습니다. GitHub Pages로 배포해 수업에서 사용할 수 있는 형태까지 완성했습니다.</p>
         <div class="owner">강유진 · EdTech/개발</div><div class="meta"><span>Claude Artifacts</span><span>Web</span><span>Classroom</span><span>Curriculum Integration</span></div><a href="https://ubernnensch.github.io/For-class-education/" target="_blank">Live Demo ↗</a></article>
+      <article class="project"><div class="project-visual"><img src="learning-experience.png" alt="교육 경험 및 성장 관리 플랫폼 화면"></div><span class="idx">07 · LEARNING EXPERIENCE PLATFORM</span><h3>교육 경험 및 성장 관리 플랫폼</h3>
+        <p>강사와 학습자의 교육 활동과 학습 경험을 지속적으로 기록하고, 교육 참여 전후의 변화와 성장 과정을 데이터 기반으로 확인할 수 있도록 설계한 교육 플랫폼입니다.</p>
+        <p class="detail">사전·사후 설문을 연결해 개인별 성장 리포트를 제공하고, 강사와 학습자의 1:1 대화 및 활동 기록을 모니터링할 수 있도록 구성했습니다. 설문 결과·교육 활동·상호작용 데이터를 하나의 흐름으로 연결해 교육 경험을 종합적으로 관리하는 서비스 구조를 기획했습니다.</p>
+        <div class="owner">김수희 · 교육 서비스 기획</div><div class="meta"><span>EdTech</span><span>Learning Analytics</span><span>Growth Report</span><span>Interaction Data</span><span>Service Planning</span></div></article>
+      <article class="project"><div class="project-visual"><img src="ai-lesson-plan.png" alt="AI 수업 지도안 약안 자동 생성 서비스 화면"></div><span class="idx">08 · AI TEACHER TOOL</span><h3>AI 수업 지도안 약안 자동 생성 서비스</h3>
+        <p>교사가 수업 준비 과정에서 반복적으로 수행하는 지도안 작성 업무를 줄이기 위해, 수업 조건을 입력하면 AI가 지도안 약안 초안을 제안하는 웹서비스를 기획·개발했습니다.</p>
+        <p class="detail">교과·단원, 수업 주제, 대상 학습자, 수업 시간과 교수·학습 형태 등의 입력 정보를 바탕으로 교수·학습 과정이 포함된 초안을 생성하도록 핵심 기능과 사용자 흐름을 구성했습니다. 생성 결과를 미리 확인하고 PDF로 저장할 수 있는 웹 기반 사용 경험까지 구현했습니다.</p>
+        <div class="owner">김수희 · 기획/개발</div><div class="meta"><span>Generative AI</span><span>Lesson Planning</span><span>Teacher Support</span><span>Web</span><span>Prototype</span></div></article>
     </div>
   </div>
 </section>
@@ -199,7 +216,7 @@
         <div class="aiitem"><h3>AI as a Model</h3><p>LLM API · RAG · 반복 추론 · 불확실성 평가</p></div>
         <div class="aiitem"><h3>AI as an Agent</h3><p>Tool Use · Role-based Agent · Multi-Agent Collaboration</p></div>
         <div class="aiitem"><h3>AI as a Dev Partner</h3><p>Claude Code · ChatGPT · Genspark 기반 프로토타이핑</p></div>
-        <div class="aiitem"><h3>AI for Education</h3><p>교육용 웹도구 · 학습 서비스 · 수업자료 · 교육 콘텐츠</p></div>
+        <div class="aiitem"><h3>AI for Education</h3><p>교육용 웹도구 · 학습 서비스 · AI 지도안 · 성장 리포트</p></div>
       </div>
     </div>
   </div>
