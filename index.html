@@ -55,10 +55,20 @@
     .pipeline{margin-top:28px;padding:24px;border-radius:18px;background:var(--navy);color:#fff;text-align:center;font-weight:800;letter-spacing:.02em}
     .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
     .project{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:27px;background:#fff;min-height:300px}
-    .project-visual{margin:-27px -27px 24px;height:260px;background:#f8fafc;border-bottom:1px solid var(--line);overflow:hidden}
-    .project-visual img{width:100%;height:100%;object-fit:contain;object-position:center;display:block}
-    .project-visual.paper-visual{background:#fff}
+    .project-visual{margin:-27px -27px 24px;height:285px;background:#f7f7f5;border-bottom:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .project-visual img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+    .project-visual.paper-visual{background:#ffffff}
+    .project:has(img[src="onedaytrip.png"]) .project-visual{background:#17251f}
+    .project:has(img[src="duribun.png"]) .project-visual{background:#fbf1e2}
+    .project:has(img[src="groweng.png"]) .project-visual{background:#fbfbf8}
+    .project:has(img[src="studio.png"]) .project-visual{background:#eefcff}
+    .project:has(img[src="youtube-ai.png"]) .project-visual{background:#f5f7ff}
     .project-visual.paper-visual img{width:100%;height:100%;object-fit:contain;object-position:top center;transform:none}
+    .project:has(img[src="onedaytrip.png"]) .project-visual img{object-fit:cover;object-position:center}
+    .project:has(img[src="duribun.png"]) .project-visual img{object-fit:cover;object-position:center}
+    .project:has(img[src="groweng.png"]) .project-visual img{object-fit:cover;object-position:center}
+    .project:has(img[src="studio.png"]) .project-visual img{object-fit:cover;object-position:center}
+    .project:has(img[src="youtube-ai.png"]) .project-visual img{object-fit:cover;object-position:center}
     .project .detail{font-size:13px;color:#53627a;margin-top:10px}
     .project .owner{font-size:11px;font-weight:800;color:#738198;margin-top:14px;text-transform:uppercase;letter-spacing:.05em}
     .project:before{display:none}
