@@ -48,6 +48,11 @@
     .person p{font-size:14px;color:#526178;margin:0 0 18px}
     .tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}.tag{font-size:11px;font-weight:750;background:#EEF4FC;padding:5px 8px;border-radius:7px}
     .highlights{padding:0;margin:0 0 20px 17px;color:#42516a;font-size:13px;word-break:keep-all;overflow-wrap:normal}.highlights li{margin:6px 0}
+    /* Align the Education / AX sections across all three team cards */
+    .person .major + .role{margin-top:8px!important}
+    .person .major + .role + .highlights{min-height:176px;margin-bottom:0}
+    .person .major + .role + .highlights + .role{margin-top:12px!important}
+    .person .highlights:last-child{margin-bottom:0}
     .button{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border:1px solid #C8D8EF;border-radius:10px;font-size:13px;font-weight:750}
     .button:hover{border-color:var(--blue);color:var(--blue)}
     .capgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
