@@ -58,8 +58,8 @@
     .capgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
     .cap{padding:23px;border:1px solid var(--line);border-radius:18px}.cap h3{font-size:17px;margin:0 0 12px}.cap p{font-size:13px;color:var(--muted);margin:0}
     .pipeline{margin-top:28px;padding:24px;border-radius:18px;background:var(--navy);color:#fff;text-align:center;font-weight:800;letter-spacing:.02em}
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    .project{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:27px;background:#fff;min-height:300px}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-items:stretch}.projects .project{height:100%}
+    .project{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:27px;background:#fff;min-height:300px;display:flex;flex-direction:column}
     .project-visual{margin:-27px -27px 24px;height:285px;background:#f7f7f5;border-bottom:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center}
     .project-visual img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
     .project-visual.paper-visual{background:#ffffff}
@@ -75,7 +75,7 @@
     .project:has(img[src="studio.png"]) .project-visual img{object-fit:cover;object-position:center}
     .project:has(img[src="youtube-ai.png"]) .project-visual img{object-fit:cover;object-position:center}
     .project .detail{font-size:13px;color:#53627a;margin-top:10px;word-break:keep-all;overflow-wrap:normal}
-    .project .owner{font-size:11px;font-weight:800;color:#738198;margin-top:14px;text-transform:uppercase;letter-spacing:.05em}
+    .project .owner{font-size:11px;font-weight:800;color:#738198;margin-top:auto;padding-top:16px;text-transform:uppercase;letter-spacing:.05em}
     .project:before{display:none}
     .project .idx{font-size:12px;font-weight:850;color:var(--blue)}.project h3{font-size:23px;line-height:1.25;margin:10px 0 8px;letter-spacing:-.035em}.project p{font-size:14px;color:var(--muted);max-width:94%;word-break:keep-all;overflow-wrap:normal}
     .project .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:18px}.meta span{font-size:11px;background:#EEF4FC;border-radius:6px;padding:5px 7px;font-weight:700}
@@ -144,7 +144,7 @@
 <ul class="highlights"><li><b>앱·게임 개발:</b> STUD.IO 프런트엔드, Unity 게임 EwhaRun 개발·배포</li><li><b>AI 교육도구:</b> Our One-Day Trip, 외교협상 보드게임</li><li><b>데이터 분석:</b> 학교안전사고 Risk Score 설계</li></ul></article>
 <article class="person"><div class="role">개발 · AI · 백엔드</div><h3>김예나</h3><div class="major">수학교육 · 통계학 · 소프트웨어</div>
 <div class="role" style="margin:8px 0;background:#EAF2FD;padding:6px 9px;border-radius:8px">교육 경험</div>
-<ul class="highlights"><li><b>실습:</b> 이대부고 교생실습</li><li><b>봉사:</b> 이대부고 수학 부진아 교육봉사</li><li><b>수업 설계:</b> 수학교육 전공 기반 수업·학습자 관점의 교육 문제 탐색</li></ul>
+<ul class="highlights"><li><b>실습:</b> 이화여대 부속 고등학교 교생실습</li><li><b>봉사:</b> 이화여대 부속 고등학교 수학 부진아 교육봉사</li><li><b>수업 설계:</b> 수학교육 전공 기반 수업·학습자 관점의 교육 문제 탐색</li></ul>
 <div class="role" style="margin:8px 0;background:#EAF2FD;padding:6px 9px;border-radius:8px">AX 경험</div>
 <ul class="highlights"><li><b>연구:</b> ConFuse - LLM·GBDT 결합 개인 상태 예측, ICTC 2026 채택(공동 제1저자)</li><li><b>AI 서비스:</b> 한국어 유튜브 허위정보 판별 - 데이터 1,435건, Conformal Prediction 기반</li><li><b>AI Agent:</b> 역할 분담·도구 사용·반복 추론 기반 멀티에이전트 시스템 구현</li></ul></article>
 </div></div></section>
@@ -158,7 +158,7 @@
         <p>초등 영어의 ‘I am going to’ 표현과 사회과의 세계화 내용을 연결해,<br>학생이 직접 여행 계획을 세우며 학습 내용을 실제 맥락에 적용하도록 만든 웹 기반 수업 도구입니다.</p>
         <p class="detail">Claude Artifacts를 활용해 지도 앱의 기능을 초등학생 수준에 맞게 단순화하고,<br>도시·장소·이동수단과 시간을 선택해 일정을 구성할 수 있도록 구현했습니다.<br>GitHub Pages로 배포해 수업에서 사용할 수 있는 형태까지 완성했습니다.</p>
         <div class="owner">강유진 · EdTech/개발</div><div class="meta"><span>Claude Artifacts</span><span>Web</span><span>Classroom</span><span>Curriculum Integration</span></div><a href="https://ubernnensch.github.io/For-class-education/" target="_blank">Live Demo ↗</a></article><article class="project"><div class="project-visual"><img src="duribun.png" alt="두리번수학 AI 수학 놀이 서비스 화면"></div><span class="idx">02 · LEARNING APP</span><h3>두리번수학</h3>
-        <p>유아가 수학 개념을 탐색하고 경험할 수 있도록 기획한 학습 앱으로,<br>교육 현장에서 발견한 요구를 디지털 학습 경험으로 전환한 프로젝트입니다.</p>
+        <p>유아가 집 안 물건을 찾고 비교하며 수학 개념을<br>탐색하고 경험할 수 있도록 기획한 학습 앱으로,<br>교육 현장의 요구를 디지털 학습 경험으로 옮긴 프로젝트입니다.</p>
         <p class="detail">Genspark를 활용해 초기 버전을 기획부터 제작까지 구현했으며, 실제 사용자 테스트 결과를 바탕으로 기능과 사용 흐름을 개선했습니다. 교육적 아이디어를 AI 도구로 빠르게 프로토타이핑하고 검증한 경험입니다.</p>
         <div class="owner">임세랑 · 기획/PM · 강유진 · 개발</div><div class="meta"><span>Early Childhood</span><span>Math Education</span><span>Genspark</span><span>User Test</span></div><a href="https://github.com/serang2337/dooribun" target="_blank" rel="noreferrer">GitHub ↗</a></article></div>
 <div style="margin:48px 0 18px;border-left:4px solid var(--blue);padding-left:14px"><h3 style="margin:0">02. 교육 서비스</h3><p style="margin:3px 0;color:var(--muted);font-size:13px">학습자의 성장과 학습 경험을 지원하는 디지털 서비스</p></div><div class="projects"><article class="project"><div class="project-visual"><img src="groweng.png" alt="GrowEng AI 영어 학습 서비스 화면"></div><span class="idx">03 · EDUCATION SERVICE</span><h3>GrowEng</h3>
